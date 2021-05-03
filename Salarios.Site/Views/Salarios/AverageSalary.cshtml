@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Salarios.Site.DTOs.SalarioPromedio>
+
+@{
+    ViewData["Title"] = "Salarios Promedio";
+}
+
+<h2>Salarios Promedio de los Ultimos 3 meses</h2>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AverageSalary)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeFullName)
+                </td>
+                <td>
+                    $ @Html.DisplayFor(modelItem => item.AverageSalary)
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,117 @@
+﻿@{ ViewData["Title"] = "Registrar Salarios"; }
+
+<h2>Registrar Salarios</h2>
+<hr />
+
+
+@model Salarios.Aplicacion.Models.SalariosRegistroViewModel
+
+
+<form asp-controller="Salarios" asp-action="Registro" method="post">
+    @*<input type="hidden" asp-for="CodigoEmpleado" value="@Model.CodigoEmpleado" />*@
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label>Empleado</label>
+            <select id="cboEmpleado" asp-for="CodigoEmpleado" class="form-control input-group-lg" asp-items="@ViewBag.empleadosItems"></select>
+            <span asp-validation-for="CodigoEmpleado" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+            <label>Año</label>
+            <input id="txtAnyo" type="number" class="form-control" />
+            <span id="sp_anyo"  class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+            <label>Mes</label>
+
+            <select id="cboMes" class="form-control">
+
+                <option selected>--- Selecione un Mes---</option>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Deciembre</option>
+            </select>
+
+            <span id="sp_mes"  class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label>Salario Base</label>
+            <input id="txtSalarioBase" type="number" placeholder="0.00" class="form-control" />
+            <span id="sp_salario_base" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+            <label>Bono de Produccion</label>
+            <input id="txtBonoProduccion" type="number" placeholder="0.00" class="form-control" />
+            <span id="sp_bono_produccion" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+            <label>Bono de Compensacion</label>
+            <input id="txtBonoCompensacion" type="number" placeholder="0.00" class="form-control" />
+            <span id="sp_bono_compensacion" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label>Comisión</label>
+            <input id="txtComision" type="number" placeholder="0.00" class="form-control" />
+            <span id="sp_comision" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+            <label>Contribucion</label>
+            <input id="txtContribucion" type="number" placeholder="0.00" class="form-control" />
+            <span id="sp_contribucion" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+            <br />
+            <button type="button" class="btn btn-info" onclick="AddSalario()">Adicionar</button>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead class="thread-inverse">
+                    <tr style="background-color:#f6f6f6;">
+                        <th>Año</th>
+                        <th>Mes</th>
+                        <th>Salario Base</th>
+                        <th>Bono Producción</th>
+                        <th>Bono Compensación</th>
+                        <th>Comision</th>
+                        <th>Contribución</th>
+                        <th>Salario Total</th>
+                    </tr>
+                </thead>
+                <tbody id="gridSalarios"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <textarea asp-for="JsonSalarios" id="txtJsonSalarios" class="col" style="display:none;"></textarea>
+
+    <br />
+    <div class="col">
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <button type="button" class="btn btn-warning" onclick="Listado()">Listado</button>
+
+    </div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/registro_salarios.js"></script>
+

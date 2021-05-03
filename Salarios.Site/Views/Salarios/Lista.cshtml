@@ -1,0 +1,118 @@
+﻿@model Salarios.Site.DTOs.ConsultaSalarios
+
+@{
+    ViewData["Title"] = "Salarios";
+}
+
+
+<h2>Listar/Filtrar Empleados-Salarios</h2>
+<hr />
+
+<form method="get" asp-action="Lista">
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label>Empleado</label>
+            <select id="cboEmpleado" asp-for="EmployeeId" name="search_empleado"  class="form-control input-group-lg" asp-items="@ViewBag.empleadosItems"></select>
+        </div>
+        <div class="col-sm-4">
+            <label>Filtro</label>
+            <select id="cboFiltro" asp-for="Filtro" name="search_filtro"  class="form-control">
+                <option value="-1" selected>--- Selecione ---</option>
+                <option value="1">Misma Oficina y Grado</option>
+                <option value="2">Todas las Oficinas, mismo Grado</option>
+                <option value="3">Misma Posición y Grado</option>
+                <option value="4">Todos los Puestos y con el mismo Grado</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <br />
+            
+            <button type="submit" class="btn btn-success">Filtrar</button>
+        </div>
+    </div>
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Codigo
+            </th>
+            <th>
+                Nombre Completo
+            </th>
+            <th>
+                División
+            </th>
+            <th>
+                Posición
+            </th>
+            <th>
+                Oficina
+            </th>
+            <th>
+                Grado
+            </th>
+            <th>
+                Fecha Inicio
+            </th>
+            <th>
+                Cumpleaños
+            </th>
+            <th>
+                Edad
+            </th>
+            <th>
+                #Identificación
+            </th>
+            <th>
+                Ultimo Salario
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Lista)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Division)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Posicion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oficina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCumple)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroIdentificacion)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.UltimoSalario)
+            </td>
+
+
+        </tr>
+        }
+    </tbody>
+</table>

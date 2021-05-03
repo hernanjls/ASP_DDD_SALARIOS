@@ -1,0 +1,12 @@
+C:\Users\Delux\source\repos\Salarios.Aplicacion\bin\Debug\netcoreapp3.1\Salarios.Aplicacion.deps.json
+C:\Users\Delux\source\repos\Salarios.Aplicacion\bin\Debug\netcoreapp3.1\Salarios.Aplicacion.dll
+C:\Users\Delux\source\repos\Salarios.Aplicacion\bin\Debug\netcoreapp3.1\Salarios.Aplicacion.pdb
+C:\Users\Delux\source\repos\Salarios.Aplicacion\bin\Debug\netcoreapp3.1\Salarios.Dominio.dll
+C:\Users\Delux\source\repos\Salarios.Aplicacion\bin\Debug\netcoreapp3.1\Salarios.Dominio.pdb
+C:\Users\Delux\source\repos\Salarios.Aplicacion\obj\Debug\netcoreapp3.1\Salarios.Aplicacion.csprojAssemblyReference.cache
+C:\Users\Delux\source\repos\Salarios.Aplicacion\obj\Debug\netcoreapp3.1\Salarios.Aplicacion.AssemblyInfoInputs.cache
+C:\Users\Delux\source\repos\Salarios.Aplicacion\obj\Debug\netcoreapp3.1\Salarios.Aplicacion.AssemblyInfo.cs
+C:\Users\Delux\source\repos\Salarios.Aplicacion\obj\Debug\netcoreapp3.1\Salarios.Aplicacion.csproj.CoreCompileInputs.cache
+C:\Users\Delux\source\repos\Salarios.Aplicacion\obj\Debug\netcoreapp3.1\Salarios.Aplicacion.csproj.CopyComplete
+C:\Users\Delux\source\repos\Salarios.Aplicacion\obj\Debug\netcoreapp3.1\Salarios.Aplicacion.dll
+C:\Users\Delux\source\repos\Salarios.Aplicacion\obj\Debug\netcoreapp3.1\Salarios.Aplicacion.pdb

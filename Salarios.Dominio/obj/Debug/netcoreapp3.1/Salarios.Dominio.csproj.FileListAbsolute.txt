@@ -1,0 +1,8 @@
+C:\Users\Delux\source\repos\Salarios.Dominio\bin\Debug\netcoreapp3.1\Salarios.Dominio.deps.json
+C:\Users\Delux\source\repos\Salarios.Dominio\bin\Debug\netcoreapp3.1\Salarios.Dominio.dll
+C:\Users\Delux\source\repos\Salarios.Dominio\bin\Debug\netcoreapp3.1\Salarios.Dominio.pdb
+C:\Users\Delux\source\repos\Salarios.Dominio\obj\Debug\netcoreapp3.1\Salarios.Dominio.AssemblyInfoInputs.cache
+C:\Users\Delux\source\repos\Salarios.Dominio\obj\Debug\netcoreapp3.1\Salarios.Dominio.AssemblyInfo.cs
+C:\Users\Delux\source\repos\Salarios.Dominio\obj\Debug\netcoreapp3.1\Salarios.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Delux\source\repos\Salarios.Dominio\obj\Debug\netcoreapp3.1\Salarios.Dominio.dll
+C:\Users\Delux\source\repos\Salarios.Dominio\obj\Debug\netcoreapp3.1\Salarios.Dominio.pdb

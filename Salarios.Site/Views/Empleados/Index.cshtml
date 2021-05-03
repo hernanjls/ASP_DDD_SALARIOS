@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Salarios.Site.DTOs.EmpleadoExt>
+
+@{
+    ViewData["Title"] = "Empleados";
+}
+
+
+<br />
+
+<a class="btn btn-primary" asp-area="" asp-controller="Empleados" asp-action="Registro">Registrar Nuevo</a>
+
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DivisionName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DivisionName)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Editar", "Registro", new { id = item.EmployeeID })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

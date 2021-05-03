@@ -1,0 +1,117 @@
+﻿@{ ViewData["Title"] = "Empleado"; }
+
+<h2>Empleado</h2>
+<hr />
+
+
+@model Salarios.Aplicacion.Models.EmpleadoViewModel
+
+@{ var disabled = (Model.IdEmpleado == null) ? "disabled" : string.Empty; }
+
+<form asp-controller="Empleados" asp-action="Registro" method="post">
+    <input type="hidden" asp-for="IdEmpleado" value="@Model.IdEmpleado" />
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label>Codigo</label>
+            <input asp-for="EmpleadoCodigo" type="text" value="@Model.EmpleadoCodigo" class="form-control" />
+            <span asp-validation-for="EmpleadoCodigo" class="text-danger"></span>
+        </div>
+        <div class="col-sm-6">
+            <label>Número de Identificacion</label>
+            <input asp-for="NumeroIdentificacion" type="text" value="@Model.NumeroIdentificacion" class="form-control" />
+            <span asp-validation-for="NumeroIdentificacion" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label>Nombre</label>
+            <input asp-for="Nombre" type="text" value="@Model.Nombre" class="form-control" />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+        <div class="col-sm-6">
+            <label>Apellidos</label>
+            <input asp-for="Apellidos" type="text" value="@Model.Apellidos" class="form-control" />
+            <span asp-validation-for="Apellidos" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label>Division</label>
+            <select asp-for="DivisionId" class="form-control input-group-lg" asp-items="@ViewBag.divisionItems"></select>
+            <span asp-validation-for="DivisionId" class="text-danger"></span>
+        </div>
+        <div class="col-sm-6">
+            <label>Posición</label>
+            <select asp-for="PosicionId" class="form-control input-group-lg" asp-items="@ViewBag.posicionItems"></select>
+            <span asp-validation-for="PosicionId" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label>Oficina</label>
+            <select asp-for="OficinaId" class="form-control input-group-lg" asp-items="@ViewBag.oficinasItems"></select>
+            <span asp-validation-for="OficinaId" class="text-danger"></span>
+        </div>
+        <div class="col-sm-6">
+            <label>Grado</label>
+            <input asp-for="Grado" type="number" value="@Model.Grado" class="form-control" />
+            <span asp-validation-for="Grado" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label>Género</label>
+            <select asp-for="Genero" class="form-control input-group-lg" asp-items="@ViewBag.generoItems"></select>
+            <span asp-validation-for="Genero" class="text-danger"></span>
+        </div>
+        <div class="col-sm-6">
+            <label>Fecha de Nacimiento</label>
+            <input asp-for="Birthday" class="form-control" />
+            <span asp-validation-for="Birthday" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label>Fecha de Contratación</label>
+            <input asp-for="BeginDate" class="form-control" />
+            <span asp-validation-for="BeginDate" class="text-danger"></span>
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+
+    </div>
+
+
+    <br />
+    <div class="col">
+        <button type="button" class="btn btn-info" onclick="Nuevo()">Nuevo</button>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <button type="button" class="btn btn-warning" onclick="Listado()">Listado</button>
+        <button type="button" class="btn btn-danger" onclick="Eliminar(@Model.IdEmpleado)" @disabled>Eliminar</button>
+    </div>
+</form>
+
+<script>function Nuevo() {
+        Request("Registro");
+    }
+    function Listado() {
+        Request("");
+    }
+    function Eliminar(Codigo) {
+        Request("Eliminar\\" + Codigo);
+    }
+    function Request(request) {
+        window.location = window.origin + "\\Empleados\\" + request;
+    }</script>

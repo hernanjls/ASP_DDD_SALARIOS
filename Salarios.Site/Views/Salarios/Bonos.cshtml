@@ -1,0 +1,74 @@
+﻿@model Salarios.Site.DTOs.ConsultaBono
+
+@{
+    ViewData["Title"] = "Salarios";
+}
+
+<h2>Bonos</h2>
+<hr />
+
+<form method="get" asp-action="Bonos">
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label>Codigo del Empleado</label>
+            <input id="txtEmpleadoCodigo" asp-for="EmployeeCode" name="search_codigo" type="text" class="form-control" />
+        </div>
+
+        <div class="col-sm-4">
+            <br />
+
+            <button type="submit" class="btn btn-success">Mostrar</button>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label>Bono del Empleado</label>
+            <input id="txtEmpleadoBono" asp-for="Bono" readonly  type="text" class="form-control" />
+        </div>
+
+    </div>
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Empleado
+            </th>
+            <th>
+                Año
+            </th>
+            <th>
+                Mes
+            </th>
+
+            <th>
+                Salario Total
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Lista)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullNameEmployee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonthDescription)
+            </td>
+
+            <td>
+                $ @Html.DisplayFor(modelItem => item.TotalSalary)
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
