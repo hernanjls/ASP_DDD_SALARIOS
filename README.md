@@ -10,8 +10,9 @@ INSTRUCCIONES PARA CORRER EL EJEMPLO
    "ConnectionStrings": {
     "DefaultConnection": "Server=[server_name];Database=[database_name];Trusted_Connection=True;MultipleActiveResultSets=true"
   },
-5) Abrir en Package Manager Console (Tools->Nuget Package Manager->Package Manager Console)
-6) En la Consola de comando ejecutar "add-migration Inicial" (Esto crear el script para crear la base de datos)
+5) Abrir en Package Manager Console (Tools->Nuget Package Manager->Package Manager Console) y seleccionar el proyecto "Salarios.Infraestructura" 
+   en el combobox Default Project
+6) En la Consola de comando ejecutar "add-migration Inicial" (Esto crea el script para crear la base de datos)
 7) En la Consola de comando ejecutar "update-database" (Esto crea la base de datos en el servidor de sql server)
 8) Ejecutar la aplicación con F5
  
