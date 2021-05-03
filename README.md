@@ -13,5 +13,6 @@ INSTRUCCIONES PARA CORRER EL EJEMPLO
 5) Abrir en Package Manager Console (Tools->Nuget Package Manager->Package Manager Console)
 6) En la Consola de comando ejecutar "add-migration Inicial" (Esto crear el script para crear la base de datos)
 7) En la Consola de comando ejecutar "update-database" (Esto crea la base de datos en el servidor de sql server)
+8) Ejecutar la aplicación con F5
  
   
